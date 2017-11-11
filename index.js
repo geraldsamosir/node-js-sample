@@ -35,6 +35,9 @@ const ControllerUser = {
               result : result
             })
         })
+        .catch((err)=>{
+            res.json(err)
+        })
 
     }
 
