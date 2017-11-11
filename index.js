@@ -14,15 +14,15 @@ const knex =  require('knex')({
     }
 });
 
-const ModelUsers = new ( 
-    class _ModelUsers  {
+// const ModelUsers = new ( 
+//     class _ModelUsers  {
 
-      getall(req,res){
-        return knex("user")
-      }
+//       getall(req,res){
+//         return knex("user")
+//       }
 
-    }
-)
+//     }
+// )
 
 
 const ControllerUser = new ( 
