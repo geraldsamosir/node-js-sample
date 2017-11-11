@@ -26,7 +26,7 @@ const ModelUsers =   {
 
 const ControllerUser = {
 
-     getall(req,res){
+     getall: function(req,res){
         ModelUsers.getall()
         .then((result)=>{
             res.status(200)
@@ -47,11 +47,7 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.get("/test",(req,res)=>{
-    res.json({
-      message: "ok"
-    })
-})
+app.get("/test",ControllerUser.getall)
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
