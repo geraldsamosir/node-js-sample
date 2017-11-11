@@ -14,33 +14,31 @@ app.use(express.static(__dirname + '/public'))
 //     }
 // });
 
-// const ModelUsers = new ( 
-//     class _ModelUsers  {
+const ModelUsers =   {
 
-//       getall(req,res){
-//         return knex("user")
-//       }
+      getall:function(req,res){
+        return knex("user")
+      }
 
-//     }
-// )
+  }
 
 
-// const ControllerUser = new ( 
-//   class _ControllerUser {
 
-//     async getall(req,res){
-//         let User =  await ModelUsers.getall()
-//         if(User !=""){
-//           res.status(200)
-//           res.json({
-//             respond :"success",
-//             result : User
-//           })
-//         }
-//     }
+const ControllerUser = {
 
-//   }
-// )
+     getall(req,res){
+        ModelUsers.getall()
+        .then((result)=>{
+            res.status(200)
+            res.json({
+              respond :"success",
+              result : result
+            })
+        })
+
+    }
+
+  }
 
 
 
