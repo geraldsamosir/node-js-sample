@@ -7,7 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "knex": "^0.14.0",
+    "mysql": "^2.15.0"
   },
   "engines": {
     "node": "4.0.0"
