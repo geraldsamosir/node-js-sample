@@ -46,7 +46,7 @@ const ControllerUser = {
 
 
 app.get('/', function(request, response) {
-  response.send('Hello World!')
+  response.send('Qlue Test  by: gerald halomoan samosir')
 })
 
 app.get("/listUser",ControllerUser.getall)
