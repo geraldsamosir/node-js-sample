@@ -13,17 +13,17 @@ const knex =  require('knex')({
     }
 });
 
-const ModelUsers =  new class _ModelUsers  {
+const ModelUsers =  new (class _ModelUsers  {
 
       getall(req,res){
         return knex("user")
       }
 
-  }
+  })
 
 
 
-const ControllerUser =  new class _ControllerUser {
+const ControllerUser =  new (class _ControllerUser {
 
      getall(req,res){
         ModelUsers.getall()
@@ -38,7 +38,7 @@ const ControllerUser =  new class _ControllerUser {
 
     }
 
-  }
+  })
 
 
 
