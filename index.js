@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -13,19 +13,19 @@ const knex =  require('knex')({
     }
 });
 
-const ModelUsers =  new (class _ModelUsers  {
+const ModelUsers =   {
 
-      getall =(req,res)=>{
+      getall:function(req,res){
         return knex("user")
       }
 
-  })
+  }
 
 
 
-const ControllerUser =  new (class _ControllerUser {
-
-     getall =(req,res)=>{
+const ControllerUser = {
+  
+     getall: function(req,res){
         ModelUsers.getall()
         .then((result)=>{
             res.status(200)
@@ -34,11 +34,10 @@ const ControllerUser =  new (class _ControllerUser {
               result : result
             })
         })
-       
 
     }
 
-  })
+  }
 
 
 
