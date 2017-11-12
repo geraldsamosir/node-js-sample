@@ -13,9 +13,9 @@ const knex =  require('knex')({
     }
 });
 
-const ModelUsers =   {
+const ModelUsers =  new class _ModelUsers  {
 
-      getall:function(req,res){
+      getall(req,res){
         return knex("user")
       }
 
@@ -23,9 +23,9 @@ const ModelUsers =   {
 
 
 
-const ControllerUser = {
+const ControllerUser =  new class _ControllerUser {
 
-     getall: function(req,res){
+     getall(req,res){
         ModelUsers.getall()
         .then((result)=>{
             res.status(200)
@@ -34,9 +34,7 @@ const ControllerUser = {
               result : result
             })
         })
-        // .catch((err)=>{
-        //     res.json(err)
-        // })
+       
 
     }
 
